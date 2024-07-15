@@ -1,30 +1,40 @@
-# React + TypeScript + Vite
+# 📋Clipboard Manager
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Clipboard Manager is a clipboard management application that allows users to monitor and interact with content copied to the operating system's clipboard.
 
-Currently, two official plugins are available:
+## Build
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The application is already compiled for Linux in the `release/0.0.0` folder with the name `Clipboard Manager-Linux-0.0.0.deb`.
 
-## Expanding the ESLint configuration
+## Installation
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+### Prerequisites
 
-- Configure the top-level `parserOptions` property like this:
+- Node.js and npm installed
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+### Cloning the repository
+
+```bash
+git clone https://github.com/seu-usuario/Clipboard-Manager.git
+cd Clipboard-Manager
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+### Installing dependencies
+
+```bash
+ npm install
+```
+
+#### Dev mode
+
+```devmode
+npm run dev
+```
+
+### Compiling
+
+```compile
+npm run build
+```
+
+⚠️ Before compiling, check and adjust the settings in the electron-builder.json file.
