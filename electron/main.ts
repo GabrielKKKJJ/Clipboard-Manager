@@ -40,13 +40,15 @@ function createWindow() {
     alwaysOnTop: true,
   });
 
-  const shortcutKey = "CommandOrControl+Shift+V";
+  const shortcutKey = "Super+Shift+V";
   globalShortcut.register(shortcutKey, () => {
     if (win) {
       if (win.isMinimized()) {
         win.restore();
+        win.focus();
+      } else {
+        win.minimize();
       }
-      win.focus(); // Focar na janela após restaurar, se necessário
     }
   });
   // Cria uma instância do Tray
