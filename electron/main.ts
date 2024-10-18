@@ -5,6 +5,7 @@ import {
   Tray,
   Menu,
   globalShortcut,
+  ipcMain,
 } from "electron";
 import { fileURLToPath } from "node:url";
 import path from "node:path";
@@ -32,13 +33,15 @@ function createWindow() {
     webPreferences: {
       preload: path.join(__dirname, "preload.mjs"), // Carrega o preload script
     },
-    width: 400,
+    width: 450,
     height: 500,
     resizable: false,
     frame: false,
     transparent: true,
     alwaysOnTop: true,
   });
+
+  win.setSkipTaskbar(true);
 
   const shortcutKey = "Super+Shift+V";
   globalShortcut.register(shortcutKey, () => {
@@ -102,6 +105,11 @@ function createWindow() {
     }
   }, 1000);
 }
+
+ipcMain.handle("clear-clipboard", () => {
+  clipboard.clear();
+  return "Clipboard cleared!";
+});
 
 // Encerra o aplicativo quando todas as janelas são fechadas, exceto no macOS
 app.on("window-all-closed", () => {

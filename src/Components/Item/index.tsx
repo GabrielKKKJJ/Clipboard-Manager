@@ -22,12 +22,14 @@ export default function Item({ description, timestamp }: ItemProps) {
     }
   };
 
-  return (
-    <div className={styles.containerItem} ref={itemRef} onClick={onClick}>
-      <div className={styles.content}>
-        <p className={styles.label}>📋 {description}</p>
+  if (description != "") {
+    return (
+      <div className={styles.containerItem} ref={itemRef} onClick={onClick}>
+        <div className={styles.content}>
+          <p className={styles.label}>📋 {description}</p>
+        </div>
+        <p className={styles.timestamp}>{timestamp}</p>
       </div>
-      <p className={styles.timestamp}>{timestamp}</p>
-    </div>
-  );
+    );
+  }
 }

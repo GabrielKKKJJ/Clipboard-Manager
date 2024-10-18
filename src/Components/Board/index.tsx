@@ -1,22 +1,27 @@
-import React from "react";
 import styles from "./styles.module.css";
 import Item from "../Item";
 
 interface BoardProps {
   items: string[];
+  clearClipboard: () => void;
 }
 
 const formatDate = (date: Date) => {
-  return new Intl.DateTimeFormat("pt-BR", {
+  const timeFormatter = new Intl.DateTimeFormat("pt-BR", {
+    hour: "2-digit",
+    minute: "2-digit",
+  });
+
+  const dateFormatter = new Intl.DateTimeFormat("pt-BR", {
     year: "numeric",
     month: "2-digit",
     day: "2-digit",
-    hour: "2-digit",
-    minute: "2-digit",
-  }).format(date);
+  });
+
+  return `${timeFormatter.format(date)} ${dateFormatter.format(date)}`;
 };
 
-const Board: React.FC<BoardProps> = ({ items }) => {
+function Board({ items, clearClipboard }: BoardProps) {
   return (
     <div className={styles.board}>
       <h1 className={styles.boardTitle}>CLIPBOARD</h1>
@@ -32,8 +37,13 @@ const Board: React.FC<BoardProps> = ({ items }) => {
             />
           ))}
       </div>
+      <div className={styles.buttonContainer}>
+        <button onClick={clearClipboard} className={styles.button}>
+          clear
+        </button>
+      </div>
     </div>
   );
-};
+}
 
 export default Board;

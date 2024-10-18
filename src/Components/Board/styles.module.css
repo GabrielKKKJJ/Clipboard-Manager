@@ -1,6 +1,6 @@
 .boardTitle {
   color: white;
-  font-size: 40px;
+  font-size: 30px;
   margin-bottom: 10px;
   margin-top: 0px;
   user-select: none;
@@ -11,7 +11,7 @@
   flex-direction: column;
   border-radius: 10px;
   align-items: center;
-  background-color: #2f2f2f;
+  background-color: #2f2f2fee;
   width: 100vw;
   height: 100vh;
 }
@@ -40,4 +40,29 @@
   border-radius: 10px;
   padding: 10px;
   margin: 10px;
+}
+
+.buttonContainer {
+  width: 90%;
+  margin-top: 5px;
+  display: flex;
+  justify-content: end;
+}
+
+.button {
+  background-color: transparent;
+  border: white solid 1px;
+  color: white;
+  padding: 2px 5px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #3f3f3f;
 }

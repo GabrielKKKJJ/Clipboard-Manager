@@ -5,6 +5,7 @@ declare global {
   interface Window {
     electronAPI: {
       onClipboardChanged: (listener: (text: string) => void) => void;
+      clearClipboardContent: () => void;
     };
   }
 }
@@ -15,7 +16,6 @@ function App() {
   useEffect(() => {
     const handleClipboardChange = (text: string) => {
       setItems((prevItems) => {
-        // Verifica se o item já está na lista
         if (prevItems.includes(text)) {
           return prevItems;
         }
@@ -26,12 +26,19 @@ function App() {
     window.electronAPI.onClipboardChanged(handleClipboardChange);
 
     return () => {
-      // Limpar listener quando o componente for desmontado
       window.electronAPI.onClipboardChanged(() => {});
+
+      setItems([]);
+      console.log("App unmounted");
     };
   }, []);
 
-  return <Board items={items} />;
+  const clearClipboard = () => {
+    window.electronAPI.clearClipboardContent();
+    setItems([]);
+  };
+
+  return <Board items={items} clearClipboard={clearClipboard} />;
 }
 
 export default App;

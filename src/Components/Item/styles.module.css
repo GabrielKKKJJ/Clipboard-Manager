@@ -34,10 +34,10 @@
 
 .label {
   color: white;
-  font-size: 20px;
+  font-size: 18px;
   margin-left: 10px;
   width: 90%;
-  font-weight: bold;
+  font-weight: normal;
   overflow-wrap: break-word;
   cursor: pointer;
 }
@@ -47,7 +47,7 @@
   text-align: end;
   font-size: 15px;
   font-weight: bold;
-  color: #313131;
+  color: #2b2b2b;
   margin-top: 5px;
   margin-left: auto;
 }
