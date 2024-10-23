@@ -1,40 +1,25 @@
-# 📋Clipboard Manager
+# 📋 Clipboard Manager
 
-Clipboard Manager is a clipboard management application that allows users to monitor and interact with content copied to the operating system's clipboard.
+**Clipboard Manager** is a powerful clipboard management application that enables users to monitor and interact with content copied to the operating system's clipboard. With an intuitive interface, it helps streamline your workflow by allowing easy access to previously copied items.
 
-## Build
+## 🎥 Demo Video
 
-The application is already compiled for Linux in the `release/0.1.0` folder with the name `ClipboardManager-Linux-0.1.0.deb`.
+Watch the demo video [here](https://youtu.be/rYvKFzN-khY).
 
-## Installation
+## 🚀 Installation
 
 ### Prerequisites
 
-- Node.js and npm installed
+Before you begin, ensure you have the following installed:
 
-### Cloning the repository
+- [Node.js](https://nodejs.org/)
+- npm (Node Package Manager)
+
+### 1. Cloning the Repository
+
+To get started, clone the repository using the command below:
 
 ```bash
 git clone https://github.com/seu-usuario/Clipboard-Manager.git
 cd Clipboard-Manager
 ```
-
-### Installing dependencies
-
-```bash
- npm install
-```
-
-#### Dev mode
-
-```devmode
-npm run dev
-```
-
-### Compiling
-
-```compile
-npm run build
-```
-
-⚠️ Before compiling, check and adjust the settings in the electron-builder.json file.
