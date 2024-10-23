@@ -6,10 +6,10 @@
   },
   "license": "MIT",
   "homepage": "https://github.com/GabriellKKKJJ/Clipboard-Manager",
-  "productName": "Clipboard Manager",
+  "productName": "ClipboardManager",
   "description": "Manage your clipboard",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.1.0",
   "type": "module",
   "scripts": {
     "dev": "vite",

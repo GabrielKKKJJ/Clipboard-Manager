@@ -4,7 +4,7 @@ Clipboard Manager is a clipboard management application that allows users to mon
 
 ## Build
 
-The application is already compiled for Linux in the `release/0.0.0` folder with the name `Clipboard Manager-Linux-0.0.0.deb`.
+The application is already compiled for Linux in the `release/0.1.0` folder with the name `ClipboardManager-Linux-0.1.0.deb`.
 
 ## Installation
 
