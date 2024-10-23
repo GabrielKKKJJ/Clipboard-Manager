@@ -23,3 +23,8 @@ To get started, clone the repository using the command below:
 git clone https://github.com/seu-usuario/Clipboard-Manager.git
 cd Clipboard-Manager
 ```
+
+🖥️ Shortcut Key
+For quick access to the clipboard manager, use the shortcut:
+
+Windows/Linux: Super + Shift + V
