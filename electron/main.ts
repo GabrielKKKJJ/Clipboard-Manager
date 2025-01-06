@@ -2,13 +2,13 @@ import {
   app,
   BrowserWindow,
   clipboard,
-  Tray,
-  Menu,
   globalShortcut,
   ipcMain,
+  Menu,
+  Tray,
 } from "electron";
-import { fileURLToPath } from "node:url";
 import path from "node:path";
+import { fileURLToPath } from "node:url";
 
 // Determina o diretório atual do arquivo main.ts
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -30,15 +30,16 @@ function createWindow() {
   // Cria uma nova janela do navegador
   win = new BrowserWindow({
     icon: path.join(__dirname, "appicon.png"),
-    webPreferences: {
-      preload: path.join(__dirname, "preload.mjs"), // Carrega o preload script
-    },
+
     width: 450,
     height: 500,
     resizable: false,
     frame: false,
     transparent: true,
     alwaysOnTop: true,
+    webPreferences: {
+      preload: path.join(__dirname, "preload.mjs"), // Carrega o preload script
+    },
   });
 
   win.setSkipTaskbar(true);
@@ -57,6 +58,12 @@ function createWindow() {
   // Cria uma instância do Tray
   const tray = new Tray(path.join(__dirname, "appicon.png"));
   const contextMenu = Menu.buildFromTemplate([
+    {
+      label: "Shortcut: " + shortcutKey,
+      enabled: false,
+    },
+    { type: "separator" },
+
     {
       label: "Minimize",
       click: () => {
